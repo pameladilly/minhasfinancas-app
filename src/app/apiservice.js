@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const httpClient = axios.create({
-    baseURL: 'https://pam-minhasfinancas-api.herokuapp.com'
+    baseURL: 'http://localhost:8080'
 })
 
 class ApiService {
@@ -12,7 +12,9 @@ class ApiService {
 
     post(url, objeto) {
         const requesUrl = `${this.apiurl}${url}`
+        console.log(requesUrl)
         return httpClient.post(requesUrl, objeto)
+
     }
 
     put(url, objeto) {
